@@ -1,6 +1,6 @@
 发现一个简单的方法，可以在不依赖第三方库的情况下，在 Javascript 代码中生成 UUID。
 
-```
+```js
 function uuid() {
   var temp_url = URL.createObjectURL(new Blob());
   var uuid = temp_url.toString(); 
@@ -12,7 +12,7 @@ function uuid() {
 在 Javascript 中可以用 URL.createObjectURL 方法创建一个唯一的 URL，用来表示传递给它的对象。为了让这个 URL 是唯一的， URL.createObjectURL 方法返回的 URL 会带上一段 36 位长的字符串，和 UUID 的长度一致，通过这个原理，就可以模拟 UUID 了。
 
 下面是这个方法生成的 UUID 的一些例子:
-```
+```js
 for(var i=0; i<10; ++i) { console.log(uuid()); }
 
 // 执行结果如下
